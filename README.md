@@ -2,6 +2,27 @@
 
 > **Navigation rapide** : Cliquez sur les onglets ci-dessous pour accéder à chaque section.
 
+## 🚀 Déploiement Vercel PWA
+
+Cette application peut être déployée sur Vercel en tant que PWA (Progressive Web App).
+
+### Configuration automatique
+1. Connectez votre repository GitHub à Vercel
+2. Vercel détectera automatiquement la configuration grâce au fichier `vercel.json`
+3. Ajoutez vos variables d'environnement dans les paramètres Vercel
+
+### Variables d'environnement requises
+- `EXPO_PUBLIC_SUPABASE_URL`
+- `EXPO_PUBLIC_SUPABASE_ANON_KEY`
+- `EXPO_PUBLIC_DIRECTUS_URL`
+- `EXPO_PUBLIC_ENV=production`
+
+### Build local
+```bash
+npm run build
+npm run preview
+```
+
 ---
 
 <details open>

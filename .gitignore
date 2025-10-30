@@ -47,6 +47,10 @@ yarn-error.*
 # Build artifacts
 build/
 dist/
+web-build/
+
+# Vercel
+.vercel
 
 # Cache directories
 .cache/
