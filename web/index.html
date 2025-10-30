@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+    
+    <!-- PWA Configuration -->
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1.00001,viewport-fit=cover" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Royaume" />
+    
+    <!-- Theme Colors -->
+    <meta name="theme-color" content="#1a1a1a" />
+    <meta name="msapplication-TileColor" content="#1a1a1a" />
+    <meta name="msapplication-navbutton-color" content="#1a1a1a" />
+    
+    <!-- App Info -->
+    <meta name="application-name" content="Royaume Paraiges" />
+    <meta name="description" content="Application officielle du Royaume des Paraiges - Découvrez les meilleures bières et établissements" />
+    
+    <title>Royaume Paraiges</title>
+    
+    <!-- Manifest -->
+    <link rel="manifest" href="/manifest.json" />
+    
+    <!-- Icons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/icon-192.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="/icon-512.png" />
+    
+    <style>
+      /**
+       * Disable text size adjustment on iOS
+       */
+      html {
+        -webkit-text-size-adjust: 100%;
+      }
+      
+      /**
+       * Ensure body covers full viewport
+       */
+      body {
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+        overflow-x: hidden;
+      }
+      
+      /**
+       * Loading screen
+       */
+      #root {
+        display: flex;
+        min-height: 100vh;
+        flex: 1;
+      }
+      
+      .splash-screen {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        background-color: #ffffff;
+      }
+      
+      .splash-logo {
+        width: 200px;
+        height: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- App Container -->
+    <noscript>Vous devez activer JavaScript pour utiliser cette application.</noscript>
+    <div id="root">
+      <div class="splash-screen">
+        <img class="splash-logo" src="/icon-192.png" alt="Royaume Paraiges" />
+      </div>
+    </div>
+    
+    <!-- Service Worker Registration -->
+    <script src="/pwa-install.js"></script>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker
+            .register('/service-worker.js')
+            .then(registration => {
+              console.log('SW registered:', registration);
+            })
+            .catch(error => {
+              console.log('SW registration failed:', error);
+            });
+        });
+      }
+    </script>
+  </body>
+</html>

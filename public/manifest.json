@@ -1,24 +1,47 @@
 {
-  "short_name": "Royaume Paraiges",
-  "name": "Royaume des Paraiges",
-  "description": "Application officielle du Royaume des Paraiges",
+  "short_name": "Royaume",
+  "name": "Royaume Paraiges",
+  "description": "Application officielle du Royaume des Paraiges - Découvrez les meilleures bières et établissements",
   "icons": [
+    {
+      "src": "/favicon.png",
+      "type": "image/png",
+      "sizes": "48x48"
+    },
     {
       "src": "/icon-192.png",
       "type": "image/png",
       "sizes": "192x192",
-      "purpose": "any maskable"
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "maskable"
     },
     {
       "src": "/icon-512.png",
       "type": "image/png",
       "sizes": "512x512",
-      "purpose": "any maskable"
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "maskable"
     }
   ],
   "start_url": "/",
+  "scope": "/",
   "display": "standalone",
+  "display_override": ["window-controls-overlay", "standalone", "minimal-ui"],
   "theme_color": "#1a1a1a",
   "background_color": "#ffffff",
-  "orientation": "portrait"
+  "orientation": "portrait-primary",
+  "prefer_related_applications": false,
+  "categories": ["food", "social", "lifestyle"],
+  "lang": "fr",
+  "dir": "ltr"
 }
