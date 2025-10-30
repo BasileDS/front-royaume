@@ -1,0 +1,76 @@
+{
+  "expo": {
+    "name": "royaume-paraiges-front",
+    "slug": "royaume-paraiges-front",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "scheme": "royaumeparaigesfront",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "ios": {
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSAppTransportSecurity": {
+          "NSAllowsArbitraryLoads": false,
+          "NSExceptionDomains": {
+            "paraiges-directus.neodelta.dev": {
+              "NSExceptionAllowsInsecureHTTPLoads": false,
+              "NSIncludesSubdomains": true,
+              "NSExceptionRequiresForwardSecrecy": true,
+              "NSExceptionMinimumTLSVersion": "TLSv1.2"
+            },
+            "uflgfsoekkgegdgecubb.supabase.co": {
+              "NSExceptionAllowsInsecureHTTPLoads": false,
+              "NSIncludesSubdomains": true,
+              "NSExceptionRequiresForwardSecrecy": true,
+              "NSExceptionMinimumTLSVersion": "TLSv1.2"
+            }
+          }
+        }
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "edgeToEdgeEnabled": true
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "static",
+      "favicon": "./assets/images/icon_paraiges_small.png",
+      "name": "Royaume des Paraiges",
+      "shortName": "Royaume Paraiges",
+      "description": "Application officielle du Royaume des Paraiges",
+      "themeColor": "#1a1a1a",
+      "backgroundColor": "#ffffff",
+      "display": "standalone",
+      "orientation": "portrait",
+      "startUrl": "/",
+      "scope": "/",
+      "crossorigin": "use-credentials",
+      "lang": "fr",
+      "preferRelatedApplications": false
+    },
+    "extra": {
+      "directusUrl": "https://paraiges-directus.neodelta.dev"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/images/splash-icon.png",
+          "imageWidth": 200,
+          "resizeMode": "contain",
+          "backgroundColor": "#ffffff"
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}
