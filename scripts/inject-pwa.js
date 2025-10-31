@@ -4,6 +4,7 @@ const fs = require('fs');
 const path = require('path');
 
 const distPath = path.join(__dirname, '../dist');
+const publicPath = path.join(__dirname, '../public');
 const indexPath = path.join(distPath, 'index.html');
 
 // Lire le fichier HTML
@@ -78,3 +79,29 @@ files.forEach(file => {
 });
 
 console.log('✅ All HTML files updated with PWA configuration!');
+
+// Copier les fichiers PWA depuis public/ vers dist/
+console.log('\n📦 Copying PWA files to dist...');
+
+const pwaFiles = [
+  'manifest.json',
+  'service-worker.js',
+  'pwa-install.js',
+  'favicon.png',
+  'icon-192.png',
+  'icon-512.png'
+];
+
+pwaFiles.forEach(file => {
+  const sourcePath = path.join(publicPath, file);
+  const destPath = path.join(distPath, file);
+  
+  if (fs.existsSync(sourcePath)) {
+    fs.copyFileSync(sourcePath, destPath);
+    console.log(`  ✓ Copied ${file}`);
+  } else {
+    console.warn(`  ⚠ Warning: ${file} not found in public/`);
+  }
+});
+
+console.log('\n✅ PWA setup complete! Your app is ready to be installed as PWA.');
